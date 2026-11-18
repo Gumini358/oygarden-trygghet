@@ -1,0 +1,529 @@
+
+/* Grunnleggende stil for Øygarden Trygghet */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+
+/* Toppseksjon med bilde fra Øygarden */
+header {
+    background:
+        
+linear-gradient(
+    rgba(15, 23, 42, 0.25),
+    rgba(15, 23, 42, 0.40)
+),
+
+        url("./images/øygarden-bridge.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #cffafe;
+}
+
+/* Hovedinnhold */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+#dashboard {
+    background-color: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+#dashboard h2 {
+    color: #0e7490;
+    margin-bottom: 15px;
+}
+
+/* Bunntekst */
+footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Tilpasning for mobil */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    #dashboard {
+        padding: 22px;
+    }
+}
+
+
+/* Skjema for sikkerhetsobservasjoner */
+#report-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+#report-form label {
+    font-weight: 600;
+    color: #334155;
+}
+
+#report-form input,
+#report-form select,
+#report-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+#report-form input:focus,
+#report-form select:focus,
+#report-form textarea:focus {
+    outline: none;
+    border-color: #0891b2;
+    box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
+}
+
+#report-form textarea {
+    resize: vertical;
+}
+
+/* Knapp for å lagre observasjoner */
+#report-form button[type="submit"] {
+    background-color: #0e7490;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#report-form button[type="submit"]:hover {
+    background-color: #155e75;
+}
+
+
+/* Større overskrifter og tydeligere farger */
+
+/* Hovedtittel på bakgrunnsbildet */
+header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1px;
+}
+
+/* Undertittel */
+header p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #a5f3fc;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Dashboard-overskrift */
+#dashboard h2 {
+    font-size: 30px;
+    color: #0e7490;
+}
+
+/* Tekst i dashboardet */
+#dashboard > p {
+    font-size: 18px;
+    color: #475569;
+}
+
+/* Skjemaetiketter */
+#report-form label {
+    font-size: 17px;
+    color: #155e75;
+}
+
+/* Mobiltilpasning */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    #dashboard h2 {
+        font-size: 25px;
+    }
+}
+
+
+/* Oversikt over registrerte observasjoner */
+#reports-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #e2e8f0;
+}
+
+#reports-section h2 {
+    font-size: 28px;
+    color: #0e7490;
+    margin-bottom: 10px;
+}
+
+#reports-section > p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/* Liste med observasjonskort */
+#reports-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Utseende på hvert observasjonskort */
+.report-card {
+    background: linear-gradient(145deg, #ffffff, #ecfeff);
+    border: 1px solid #a5f3fc;
+    border-left: 5px solid #0891b2;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
+    overflow-wrap: anywhere;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+.report-card h3 {
+    color: #155e75;
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.report-card p {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.report-card strong {
+    color: #0e7490;
+}
+
+/* Mobiltilpasning for observasjonskort */
+@media (max-width: 650px) {
+    #reports-list {
+        grid-template-columns: 1fr;
+    }
+
+    .report-card {
+        padding: 18px;
+    }
+}
+
+/* Knapp for å slette observasjoner */
+.delete-btn {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #991b1b;
+}
+
+.delete-btn:focus-visible {
+    outline: 3px solid #fca5a5;
+    outline-offset: 3px;
+}
+.report-card .delete-btn {
+    background-color: #dc2626;
+    color: white;
+}
+
+.report-card .delete-btn:hover {
+    background-color: #991b1b;
+}
+
+/* Felles stil for redigerings- og sletteknapper */
+.report-card .edit-btn,
+.report-card .delete-btn {
+    min-width: 110px;
+    padding: 12px 18px;
+    margin-top: 15px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Grønn knapp for redigering */
+.report-card .edit-btn {
+    background-color: #059669;
+}
+
+.report-card .edit-btn:hover {
+    background-color: #047857;
+}
+
+/* Rød knapp for sletting */
+.report-card .delete-btn {
+    background-color: #dc2626;
+}
+
+.report-card .delete-btn:hover {
+    background-color: #991b1b;
+}
+
+.report-card .edit-btn:focus-visible {
+    outline: 3px solid #6ee7b7;
+    outline-offset: 3px;
+}
+
+.report-card .delete-btn:focus-visible {
+    outline: 3px solid #fca5a5;
+    outline-offset: 3px;
+}
+
+/* Knapp for å avbryte redigering */
+#cancel-edit-btn {
+    background-color: #d97706;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+#cancel-edit-btn:hover {
+    background-color: #b45309;
+}
+
+#cancel-edit-btn:focus-visible {
+    outline: 3px solid #fcd34d;
+    outline-offset: 3px;
+}
+
+/* Skjuler knappen når den ikke er aktiv */
+#cancel-edit-btn[hidden] {
+    display: none;
+}
+
+/* Filtrering av sikkerhetsobservasjoner */
+.filter-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #ecfeff;
+    border: 1px solid #a5f3fc;
+    border-radius: 12px;
+}
+
+/* Gruppe for hvert filter */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #155e75;
+}
+
+/* Nedtrekksmenyer */
+.filter-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #67e8f9;
+    border-radius: 8px;
+    background-color: white;
+    color: #1e293b;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #0891b2;
+    box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
+}
+
+/* Tilpasning for mobil */
+@media (max-width: 650px) {
+    .filter-container {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+}
+
+/* Tilpasning av filtre for nettbrett */
+@media (min-width: 651px) and (max-width: 850px) {
+    .filter-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Statistikk for sikkerhetsobservasjoner */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+/* Felles stil for statistikkort */
+.stat-card {
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    font-size: 38px;
+    font-weight: 800;
+}
+
+/* Totalt antall */
+.stat-card:nth-child(1) {
+    background: linear-gradient(135deg, #0891b2, #155e75);
+}
+
+/* Trafikkfare */
+.stat-card:nth-child(2) {
+    background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+
+/* Gatelys */
+.stat-card:nth-child(3) {
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+/* Mobiltilpasning */
+@media (max-width: 650px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+}
+
+/* Knapp for å slette alle observasjoner */
+#delete-all-btn {
+    display: block;
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    margin: 20px 0 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Effekt når musen holdes over knappen */
+#delete-all-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
+}
+
+/* Synlig fokus ved tastaturnavigasjon */
+#delete-all-btn:focus-visible {
+    outline: 3px solid #fca5a5;
+    outline-offset: 3px;
+}
+
+/* Tilpasning for mobil */
+@media (max-width: 650px) {
+    #delete-all-btn {
+        width: 100%;
+    }
+}

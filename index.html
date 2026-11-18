@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Øygarden Trygghet</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Øygarden Trygghet</h1>
+        <p>Din personlige oversikt over sikkerhet i Øygarden</p>
+    </header>
+
+    <main>
+        
+<section id="dashboard">
+    <h2>Sikkerhetsdashboard</h2>
+    <p>Registrer og organiser lokale sikkerhetsobservasjoner.</p>
+
+<!-- Statistikk over registrerte observasjoner -->
+<div class="stats-container">
+
+    <div class="stat-card">
+        <h3>Totalt antall</h3>
+        <p id="total-reports">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Trafikkfare</h3>
+        <p id="traffic-reports">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Gatelys</h3>
+        <p id="light-reports">0</p>
+    </div>
+
+</div>
+
+    <!-- Skjema for nye sikkerhetsobservasjoner -->
+    <form id="report-form">
+
+        <label for="report-title">Tittel</label>
+        <input
+            type="text"
+            id="report-title"
+            placeholder="F.eks. Ødelagt gatelys"
+            required
+        >
+
+        <label for="report-location">Sted</label>
+        <select id="report-location" required>
+            <option value="">Velg sted</option>
+            <option value="Straume">Straume</option>
+            <option value="Ågotnes">Ågotnes</option>
+            <option value="Sund">Sund</option>
+            <option value="Rong">Rong</option>
+            <option value="Skogsvåg">Skogsvåg</option>
+            <option value="Annet">Annet</option>
+        </select>
+
+        <label for="report-category">Kategori</label>
+        <select id="report-category" required>
+            <option value="">Velg kategori</option>
+            <option value="Trafikkfare">Trafikkfare</option>
+            <option value="Gatelys">Gatelys</option>
+            <option value="Vær og natur">Vær og natur</option>
+            <option value="Andre farer">Andre farer</option>
+        </select>
+
+        <label for="report-description">Beskrivelse</label>
+        <textarea
+            id="report-description"
+            rows="4"
+            placeholder="Beskriv observasjonen..."
+            required
+        ></textarea>
+
+        <button type="submit">Lagre observasjon</button>
+
+<!-- Knapp for å avbryte redigering -->
+<button
+    type="button"
+    id="cancel-edit-btn"
+    hidden>
+    Avbryt redigering
+</button>
+
+</form>
+<!-- Oversikt over lagrede observasjoner -->
+<section id="reports-section">
+    <h2>Registrerte observasjoner</h2>
+    <p>Her vises observasjonene du har lagret.</p>
+
+<!-- Knapp for å slette alle observasjoner -->
+<button type="button" id="delete-all-btn">
+    Slett alle observasjoner
+</button>
+
+<!-- Filtrering av registrerte observasjoner -->
+<div class="filter-container">
+
+    <div class="filter-group">
+        <label for="filter-location">Filtrer etter sted</label>
+        <select id="filter-location">
+            <option value="all">Alle steder</option>
+            <option value="Straume">Straume</option>
+            <option value="Ågotnes">Ågotnes</option>
+            <option value="Sund">Sund</option>
+            <option value="Rong">Rong</option>
+            <option value="Skogsvåg">Skogsvåg</option>
+            <option value="Annet">Annet</option>
+        </select>
+
+    </div>
+
+    <div class="filter-group">
+        <label for="filter-category">Filtrer etter kategori</label>
+        <select id="filter-category">
+            <option value="all">Alle kategorier</option>
+            <option value="Trafikkfare">Trafikkfare</option>
+            <option value="Gatelys">Gatelys</option>
+            <option value="Vær og natur">Vær og natur</option>
+            <option value="Andre farer">Andre farer</option>
+        </select>
+    </div>
+
+<!-- Sortering av registrerte observasjoner -->
+<div class="filter-group">
+    <label for="sort-reports">Sorter observasjoner</label>
+    <select id="sort-reports">
+        <option value="newest">Nyeste først</option>
+        <option value="oldest">Eldste først</option>
+        <option value="az">Tittel A–Å</option>
+        <option value="za">Tittel Å–A</option>
+    </select>
+</div>
+
+</div>
+
+    <div id="reports-list">
+        <!-- Observasjonene legges til med JavaScript -->
+    </div>
+</section>
+
+</section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Øygarden Trygghet | Laget av Rafal </p>
+        
+    </footer>
+
+</body>
+</html>
